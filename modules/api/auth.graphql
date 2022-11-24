@@ -1,0 +1,30 @@
+query Profile {
+  profile {
+    first_name
+    is_active
+    last_name
+    phone_number
+    profile_image
+    email_verified
+    email
+  }
+}
+
+mutation UpdateProfile(
+  $firstName: String!
+  $phoneNumber: String!
+  $lastName: String!
+  $profileImage: String!
+) {
+  update_user(
+    _set: {
+      first_name: $firstName
+      last_name: $lastName
+      phone_number: $phoneNumber
+      profile_image: $profileImage
+    }
+    where: {}
+  ) {
+    affected_rows
+  }
+}

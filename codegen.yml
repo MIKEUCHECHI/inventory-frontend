@@ -1,0 +1,11 @@
+overwrite: true
+schema: https://unique-gobbler-90.hasura.app/v1/graphql
+headers:
+  x-hasura-admin-secret: "zxsg5zkk0iW5tsXlOh4bC0GUiYosawnOkF6zsOqeSTGHR8hgeBRscoueust0HYRI"
+documents: "modules/api/*.graphql"
+generates:
+  modules/api/generated.tsx:
+    plugins:
+      - "typescript"
+      - "typescript-operations"
+      - "typescript-urql"
